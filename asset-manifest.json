@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Tangtang-UI/static/css/main.6ac17982.css",
+    "main.js": "/Tangtang-UI/static/js/main.f7557d9e.js",
+    "index.html": "/Tangtang-UI/index.html",
+    "main.6ac17982.css.map": "/Tangtang-UI/static/css/main.6ac17982.css.map",
+    "main.f7557d9e.js.map": "/Tangtang-UI/static/js/main.f7557d9e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6ac17982.css",
+    "static/js/main.f7557d9e.js"
+  ]
+}
