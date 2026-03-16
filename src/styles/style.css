@@ -135,6 +135,13 @@ body {
   box-shadow: 0 8px 30px rgba(0,0,0,0.12);
 }
 
+/* ===== Tags ===== */
+.tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.tag {
+  background: #eee8ff; color: #6c5ce7; font-size: 0.78rem; font-weight: 600;
+  padding: 0.25rem 0.7rem; border-radius: 50px;
+}
+
 /* ===== Footer ===== */
 .footer {
   text-align: center; padding: 2rem; color: #a0aec0;
