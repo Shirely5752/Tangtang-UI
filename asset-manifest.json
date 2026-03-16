@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/Tangtang-UI/static/css/main.4a9ae949.css",
-    "main.js": "/Tangtang-UI/static/js/main.393356bf.js",
+    "main.css": "/Tangtang-UI/static/css/main.7d1fd97e.css",
+    "main.js": "/Tangtang-UI/static/js/main.aba988aa.js",
     "index.html": "/Tangtang-UI/index.html",
-    "main.4a9ae949.css.map": "/Tangtang-UI/static/css/main.4a9ae949.css.map",
-    "main.393356bf.js.map": "/Tangtang-UI/static/js/main.393356bf.js.map"
+    "main.7d1fd97e.css.map": "/Tangtang-UI/static/css/main.7d1fd97e.css.map",
+    "main.aba988aa.js.map": "/Tangtang-UI/static/js/main.aba988aa.js.map"
   },
   "entrypoints": [
-    "static/css/main.4a9ae949.css",
-    "static/js/main.393356bf.js"
+    "static/css/main.7d1fd97e.css",
+    "static/js/main.aba988aa.js"
   ]
 }
