@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Content = () => {
   return (
@@ -10,7 +11,7 @@ const Content = () => {
           <p>Software Developer · AI & ML Enthusiast · Data Analyst · Creative Storyteller</p>
           <p className="hero__sub">Stockholm, Sweden 🇸🇪 | Ericsson Thesis Student | MSc Computer Science @ Uppsala University</p>
           <div className="hero__buttons">
-            <a href="#projects" className="btn btn--primary">View Projects</a>
+            <Link to="/projects" className="btn btn--primary">View Projects</Link>
             <a href="#contact" className="btn btn--outline">Contact Me</a>
           </div>
         </div>
@@ -70,38 +71,6 @@ const Content = () => {
             allow="autoplay"
             title="Introduction Video"
           />
-        </div>
-      </section>
-
-      {/* Projects */}
-      <section id="projects" className="section">
-        <h2 className="section__title">🚀 Projects</h2>
-        <div className="video-wrapper" style={{ marginBottom: '2rem' }}>
-          <iframe
-            src="https://drive.google.com/file/d/1k0ayrUw8PRNbr_oqK9dcZmChQPb5HM_P/preview"
-            width="800"
-            height="450"
-            allow="autoplay"
-            title="Bachelor Thesis - Kristianstad University"
-          />
-          <p style={{ textAlign: 'center', marginTop: '1rem', color: '#6c5ce7', fontWeight: 600 }}>
-            🎓 Bachelor Thesis Project — Kristianstad University
-          </p>
-        </div>
-        <div className="about-grid">
-          <div className="card card--project">
-            <h3>🎞️ Project Animation Showcase</h3>
-            <p>An animated overview of various projects I've worked on, from data analysis to software development.</p>
-            <a href="#video" className="card__link">Watch the Animation →</a>
-          </div>
-          <div className="card card--project">
-            <h3>📊 Data Analysis</h3>
-            <p>Big data analysis projects using Python and R, exploring patterns and insights from complex datasets.</p>
-          </div>
-          <div className="card card--project">
-            <h3>🧩 Combinatorial Optimization</h3>
-            <p>Research and implementation of optimization algorithms for real-world problem solving.</p>
-          </div>
         </div>
       </section>
 

@@ -30,7 +30,7 @@ const Header = () => {
             <>
               <button onClick={() => scrollTo('about')}>About</button>
               <button onClick={() => scrollTo('video')}>Video</button>
-              <button onClick={() => scrollTo('projects')}>Projects</button>
+              <Link to="/projects">Projects</Link>
               <button onClick={() => scrollTo('teamwork')}>Teamwork</button>
               <button onClick={() => scrollTo('contact')}>Contact</button>
             </>
