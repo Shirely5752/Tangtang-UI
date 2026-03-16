@@ -198,6 +198,69 @@ body {
   content: '▸'; position: absolute; left: 0; color: #6c5ce7; font-weight: 700;
 }
 
+/* ===== Gaming Dashboard ===== */
+.stat-card--gaming {
+  background: linear-gradient(135deg, #00b894, #00cec9);
+}
+
+.dashboard-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+.dashboard-card { padding: 1.5rem 2rem; }
+.dashboard-card--wide { grid-column: 1 / -1; }
+
+/* Bar Chart */
+.bar-chart { display: flex; flex-direction: column; gap: 0.8rem; margin-top: 1rem; }
+.bar-chart__row { display: flex; align-items: center; gap: 0.8rem; }
+.bar-chart__label { width: 80px; font-size: 0.9rem; font-weight: 600; color: #2d3748; text-align: right; }
+.bar-chart__track { flex: 1; height: 22px; background: #eee8ff; border-radius: 12px; overflow: hidden; }
+.bar-chart__fill {
+  height: 100%; border-radius: 12px;
+  animation: barGrow 1s ease-out forwards;
+  transform-origin: left; width: 0;
+}
+.bar-chart__pct { width: 40px; font-size: 0.85rem; font-weight: 700; color: #6c5ce7; }
+
+@keyframes barGrow { to { width: var(--w); } }
+.bar-chart__fill { --w: 0; }
+
+/* Ring Charts */
+.tech-rings { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; margin-top: 1rem; }
+.ring-item { display: flex; flex-direction: column; align-items: center; gap: 0.4rem; }
+.ring-item__label { font-size: 0.85rem; font-weight: 600; color: #2d3748; }
+.ring { position: relative; width: 70px; height: 70px; }
+.ring svg { width: 100%; height: 100%; transform: rotate(-90deg); }
+.ring__bg {
+  fill: none; stroke: #eee8ff; stroke-width: 3;
+}
+.ring__fill {
+  fill: none; stroke: #6c5ce7; stroke-width: 3;
+  stroke-linecap: round;
+  animation: ringDraw 1.2s ease-out forwards;
+  stroke-dasharray: 0, 100;
+}
+.ring__text {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  font-size: 0.75rem; font-weight: 700; color: #6c5ce7;
+}
+
+@keyframes ringDraw {
+  to { stroke-dasharray: var(--ring-pct, 0), 100; }
+}
+
+/* Findings */
+.findings-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem; margin-top: 1rem;
+}
+.finding {
+  display: flex; align-items: flex-start; gap: 0.6rem;
+  background: #f7f8fc; border-radius: 12px; padding: 1rem;
+}
+.finding__icon { font-size: 1.5rem; flex-shrink: 0; }
+.finding p { font-size: 0.9rem; color: #4a5568; margin: 0; }
+
 /* ===== Footer ===== */
 .footer {
   text-align: center; padding: 2rem; color: #a0aec0;

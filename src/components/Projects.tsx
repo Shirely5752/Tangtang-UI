@@ -83,7 +83,7 @@ const projects = [
   },
 ];
 
-const timeline = [
+const ericssonTimeline = [
   {
     phase: 'Phase 1 — Summer Internship',
     time: '06/2025 – 08/2025',
@@ -108,11 +108,34 @@ const timeline = [
   },
 ];
 
-const stats = [
+const ericssonStats = [
   { icon: '🤖', value: '2', label: 'LLM Systems Built' },
   { icon: '📄', value: '1000+', label: 'Documents Processed' },
   { icon: '🔒', value: '100%', label: 'On-Premise & Private' },
   { icon: '⚡', value: '9 mo+', label: 'Continuous R&D' },
+];
+
+const gamingBars = [
+  { label: 'RPG', pct: 82, color: '#6c5ce7' },
+  { label: 'Action', pct: 74, color: '#a29bfe' },
+  { label: 'Strategy', pct: 68, color: '#fd79a8' },
+  { label: 'Sports', pct: 55, color: '#fdcb6e' },
+  { label: 'Simulation', pct: 47, color: '#00cec9' },
+];
+
+const gamingMetrics = [
+  { icon: '🌍', value: '4+', label: 'Cultural Regions Analyzed' },
+  { icon: '🎮', value: '5', label: 'Game Genres Studied' },
+  { icon: '📊', value: '10K+', label: 'Player Records Processed' },
+  { icon: '🧠', value: '6 mo', label: 'Research Duration' },
+];
+
+const gamingTechStack = [
+  { name: 'Hadoop', pct: 90 },
+  { name: 'Spark', pct: 85 },
+  { name: 'Keras', pct: 75 },
+  { name: 'Sklearn', pct: 80 },
+  { name: 'Python', pct: 95 },
 ];
 
 const Projects = () => {
@@ -126,13 +149,11 @@ const Projects = () => {
         </div>
       </section>
 
-      {/* Featured: Ericsson LLM Journey */}
+      {/* Featured 1: Ericsson LLM Journey */}
       <section className="section">
         <h2 className="section__title">⭐ Featured — LLM Research Journey @ Ericsson</h2>
-
-        {/* Stats */}
         <div className="stats-grid">
-          {stats.map((s, i) => (
+          {ericssonStats.map((s, i) => (
             <div key={i} className="stat-card">
               <span className="stat-card__icon">{s.icon}</span>
               <span className="stat-card__value">{s.value}</span>
@@ -140,10 +161,8 @@ const Projects = () => {
             </div>
           ))}
         </div>
-
-        {/* Timeline */}
         <div className="timeline">
-          {timeline.map((t, i) => (
+          {ericssonTimeline.map((t, i) => (
             <div key={i} className="timeline__item">
               <div className="timeline__dot" />
               <div className="timeline__content">
@@ -162,8 +181,104 @@ const Projects = () => {
         </div>
       </section>
 
-      {/* All Projects */}
+      {/* Featured 2: Gaming UX Analytics */}
       <section className="section section--alt">
+        <h2 className="section__title">🎮 Featured — Game User Experience Analytics @ Ruse University</h2>
+        <p style={{ textAlign: 'center', color: '#4a5568', marginBottom: '2rem', maxWidth: 700, marginLeft: 'auto', marginRight: 'auto' }}>
+          Spearheaded comprehensive analysis of gaming preferences across diverse cultural demographics,
+          utilizing big data technologies and machine learning to identify trends in game popularity and user engagement.
+        </p>
+
+        {/* Metrics */}
+        <div className="stats-grid">
+          {gamingMetrics.map((s, i) => (
+            <div key={i} className="stat-card stat-card--gaming">
+              <span className="stat-card__icon">{s.icon}</span>
+              <span className="stat-card__value">{s.value}</span>
+              <span className="stat-card__label">{s.label}</span>
+            </div>
+          ))}
+        </div>
+
+        <div className="dashboard-grid">
+          {/* Genre Popularity Chart */}
+          <div className="card dashboard-card">
+            <h3>📈 Genre Popularity by Engagement</h3>
+            <div className="bar-chart">
+              {gamingBars.map((b, i) => (
+                <div key={i} className="bar-chart__row">
+                  <span className="bar-chart__label">{b.label}</span>
+                  <div className="bar-chart__track">
+                    <div
+                      className="bar-chart__fill"
+                      style={{ background: b.color, animationDelay: `${i * 0.15}s`, ['--w' as any]: `${b.pct}%` }}
+                    />
+                  </div>
+                  <span className="bar-chart__pct">{b.pct}%</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Tech Stack Proficiency */}
+          <div className="card dashboard-card">
+            <h3>🛠️ Tech Stack Used</h3>
+            <div className="tech-rings">
+              {gamingTechStack.map((t, i) => (
+                <div key={i} className="ring-item">
+                  <div className="ring">
+                    <svg viewBox="0 0 36 36">
+                      <path
+                        className="ring__bg"
+                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                      />
+                      <path
+                        className="ring__fill"
+                        strokeDasharray={`${t.pct}, 100`}
+                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                        style={{ ['--ring-pct' as any]: t.pct, animationDelay: `${i * 0.2}s` }}
+                      />
+                    </svg>
+                    <span className="ring__text">{t.pct}%</span>
+                  </div>
+                  <span className="ring-item__label">{t.name}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Key Findings */}
+          <div className="card dashboard-card dashboard-card--wide">
+            <h3>🔍 Key Findings</h3>
+            <div className="findings-grid">
+              <div className="finding">
+                <span className="finding__icon">🌏</span>
+                <p><strong>Asia</strong> showed highest engagement in RPG and Strategy genres</p>
+              </div>
+              <div className="finding">
+                <span className="finding__icon">🇪🇺</span>
+                <p><strong>Europe</strong> preferred Action and Simulation games with longer sessions</p>
+              </div>
+              <div className="finding">
+                <span className="finding__icon">🇺🇸</span>
+                <p><strong>USA</strong> dominated Sports genre with highest in-game purchase rates</p>
+              </div>
+              <div className="finding">
+                <span className="finding__icon">📱</span>
+                <p>Players aged <strong>18–25</strong> had 2x higher session frequency than other groups</p>
+              </div>
+            </div>
+            <div className="tags" style={{ marginTop: '1rem' }}>
+              {['Hadoop', 'Spark', 'Keras', 'Sklearn', 'Big Data', 'ML', 'Cross-Cultural Analysis'].map(t => (
+                <span key={t} className="tag">{t}</span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* All Projects */}
+      <section className="section">
         <h2 className="section__title">📂 All Projects</h2>
         <div className="about-grid">
           {projects.map((p, i) => (
