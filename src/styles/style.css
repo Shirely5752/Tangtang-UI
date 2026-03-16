@@ -1,102 +1,156 @@
-/* 设置全局样式 */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* ===== Reset & Base ===== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 70px; }
 
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f0f8ff;
-    /* 使用更柔和的背景颜色 */
-    color: #333;
-    /* 文字颜色 */
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  line-height: 1.7;
+  color: #2d3748;
+  background: #f7f8fc;
 }
 
-/* 顶部导航栏 */
-header {
-    background: #32CD32;
-    /* 活力绿背景 */
-    color: #fff;
-    padding: 1rem;
-    text-align: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    /* 添加阴影 */
+/* ===== Navbar ===== */
+.navbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(12px);
+  transition: box-shadow 0.3s;
+}
+.navbar--scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.08); }
+
+.navbar__inner {
+  max-width: 1100px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0.8rem 1.5rem;
 }
 
-header nav a {
-    color: #fff;
-    margin: 0 15px;
-    text-decoration: none;
-    transition: color 0.3s;
-    /* 添加过渡效果 */
+.navbar__logo {
+  font-size: 1.3rem; font-weight: 700;
+  text-decoration: none; color: #6c5ce7;
 }
 
-header nav a:hover {
-    color: #ffeb3b;
-    /* 悬停时变为亮黄色 */
-    text-decoration: underline;
+.navbar__links {
+  display: flex; align-items: center; gap: 0.5rem;
+}
+.navbar__links button,
+.navbar__links a {
+  background: none; border: none; cursor: pointer;
+  font-size: 0.95rem; color: #4a5568; padding: 0.4rem 0.8rem;
+  border-radius: 8px; text-decoration: none; transition: all 0.2s;
+  font-family: inherit;
+}
+.navbar__links button:hover,
+.navbar__links a:hover { background: #eee8ff; color: #6c5ce7; }
+
+.navbar__cta {
+  background: linear-gradient(135deg, #6c5ce7, #a29bfe) !important;
+  color: #fff !important; font-weight: 600;
+}
+.navbar__cta:hover { opacity: 0.9; transform: translateY(-1px); }
+
+.navbar__toggle {
+  display: none; background: none; border: none;
+  font-size: 1.5rem; cursor: pointer; color: #4a5568;
 }
 
-/* 各个部分的样式 */
-section {
-    padding: 20px;
-    margin: 10px 0;
-    background: #ffffff;
-    /* 每个部分的背景 */
-    border-radius: 10px;
-    /* 圆角 */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    /* 阴影效果 */
+/* ===== Hero ===== */
+.hero {
+  min-height: 92vh; display: flex; align-items: center; justify-content: center;
+  text-align: center; padding: 6rem 1.5rem 4rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+}
+.hero--story {
+  min-height: 50vh;
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+.hero__text h1 { font-size: 3rem; font-weight: 800; margin-bottom: 0.8rem; }
+.hero__text p { font-size: 1.2rem; opacity: 0.92; }
+.hero__sub { margin-top: 0.5rem; font-size: 1.05rem; opacity: 0.8; }
+.highlight { color: #ffd32a; }
+
+.hero__buttons { margin-top: 2rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+.btn {
+  display: inline-block; padding: 0.75rem 2rem; border-radius: 50px;
+  font-size: 1rem; font-weight: 600; text-decoration: none; transition: all 0.3s;
+}
+.btn--primary { background: #fff; color: #6c5ce7; }
+.btn--primary:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,0,0,0.15); }
+.btn--outline { border: 2px solid #fff; color: #fff; }
+.btn--outline:hover { background: #fff; color: #6c5ce7; }
+
+/* ===== Sections ===== */
+.section { padding: 5rem 1.5rem; max-width: 1100px; margin: 0 auto; }
+.section--alt { background: #f0edff; max-width: 100%; }
+.section--alt > * { max-width: 1100px; margin-left: auto; margin-right: auto; }
+
+.section__title {
+  font-size: 2rem; font-weight: 700; text-align: center;
+  margin-bottom: 2.5rem; color: #2d3748;
 }
 
-/* 标题样式 */
-h2 {
-    margin-bottom: 10px;
-    color: #2e8b57;
-    /* 深绿色 */
-    font-size: 1.8rem;
-    /* 增大标题字体 */
+/* ===== Cards ===== */
+.about-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
 }
 
-/* 项目样式 */
-.project {
-    background: #f4f4f4;
-    /* 项目背景 */
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    /* 圆角 */
-    transition: transform 0.3s;
-    /* 添加过渡效果 */
+.card {
+  background: #fff; border-radius: 16px; padding: 2rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.card:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(0,0,0,0.1); }
+.card h3 { font-size: 1.2rem; margin-bottom: 0.8rem; color: #6c5ce7; }
+.card p { color: #4a5568; font-size: 0.95rem; }
+
+.card--project { border-top: 4px solid #6c5ce7; }
+.card__link {
+  display: inline-block; margin-top: 1rem; color: #6c5ce7;
+  font-weight: 600; text-decoration: none;
+}
+.card__link:hover { text-decoration: underline; }
+
+/* ===== Contact ===== */
+.contact__intro { text-align: center; margin-bottom: 2rem; font-size: 1.1rem; color: #4a5568; }
+
+.contact-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem; max-width: 700px; margin: 0 auto;
+}
+.card--contact {
+  display: flex; align-items: center; gap: 0.6rem;
+  text-decoration: none; color: #4a5568; font-weight: 500;
+  padding: 1.2rem 1.5rem; text-align: center; justify-content: center;
+}
+.card--contact span { font-size: 1.4rem; }
+.card--contact:hover { color: #6c5ce7; }
+
+/* ===== Video ===== */
+.video-wrapper { text-align: center; }
+.video-wrapper iframe {
+  max-width: 100%; border: none; border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
 }
 
-.project:hover {
-    transform: translateY(-3px);
-    /* 悬停时轻微上移 */
+/* ===== Footer ===== */
+.footer {
+  text-align: center; padding: 2rem; color: #a0aec0;
+  font-size: 0.9rem; border-top: 1px solid #e2e8f0;
+  margin-top: 2rem;
 }
 
-/* 视频部分样式 */
-video {
-    width: 100%;
-    max-width: 600px;
-    border-radius: 10px;
-    /* 圆角 */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    /* 阴影效果 */
-}
-
-/* 响应式设计 */
-@media (max-width: 600px) {
-    header nav a {
-        margin: 0 10px;
-        /* 小屏幕上减少导航链接的间距 */
-    }
-
-    section {
-        padding: 15px;
-        /* 小屏幕上减少内边距 */
-    }
+/* ===== Mobile ===== */
+@media (max-width: 768px) {
+  .navbar__toggle { display: block; }
+  .navbar__links {
+    display: none; flex-direction: column;
+    position: absolute; top: 100%; left: 0; right: 0;
+    background: #fff; padding: 1rem; box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  }
+  .navbar__links--open { display: flex; }
+  .hero__text h1 { font-size: 2rem; }
+  .hero__text p { font-size: 1rem; }
 }
