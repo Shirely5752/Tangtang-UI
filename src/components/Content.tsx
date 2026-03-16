@@ -12,7 +12,7 @@ const Content = () => {
           <p className="hero__sub">Stockholm, Sweden 🇸🇪 | Ericsson Thesis Student | MSc Computer Science @ Uppsala University</p>
           <div className="hero__buttons">
             <Link to="/projects" className="btn btn--primary">View Projects</Link>
-            <a href="#contact" className="btn btn--outline">Contact Me</a>
+            <button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} className="btn btn--outline">Contact Me</button>
           </div>
         </div>
       </section>
