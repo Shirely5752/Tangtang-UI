@@ -7,8 +7,8 @@ const Content = () => {
       <section className="hero">
         <div className="hero__text">
           <h1>Hi, I'm <span className="highlight">Tingting Lyu</span> 👋</h1>
-          <p>Software Developer · Data Enthusiast · Creative Storyteller</p>
-          <p className="hero__sub">Based in Sweden 🇸🇪 | Passionate about combining technology with creativity</p>
+          <p>Software Developer · AI & ML Enthusiast · Data Analyst · Creative Storyteller</p>
+          <p className="hero__sub">Stockholm, Sweden 🇸🇪 | Ericsson Thesis Student | MSc Computer Science @ Uppsala University</p>
           <div className="hero__buttons">
             <a href="#projects" className="btn btn--primary">View Projects</a>
             <a href="#contact" className="btn btn--outline">Contact Me</a>
@@ -23,28 +23,38 @@ const Content = () => {
           <div className="card">
             <h3>🎓 Education</h3>
             <p>
-              Currently pursuing a Master's in Computer Science at <strong>Uppsala University</strong>, Sweden.
-              Bachelor's in Software Development from Kristianstad University, and an engineering degree from
-              Shanghai Polytechnic University. Exchange experience at Ruse University, Bulgaria.
+              <strong>MSc Computer Science</strong> — Uppsala University (2024–present)<br />
+              <strong>Exchange</strong> — Montreal Polytechnic University (2025)<br />
+              <strong>BSc Software Development</strong> — Kristianstad University (2021–2024)<br />
+              <strong>BEng Computer Science</strong> — Shanghai Polytechnic University (2020–2024)<br />
+              <strong>Exchange</strong> — Ruse University, Bulgaria (2022)
+            </p>
+          </div>
+          <div className="card">
+            <h3>💼 Experience</h3>
+            <p>
+              <strong>Thesis Student @ Ericsson</strong> (2026–present) — Designing interactive query interfaces for telecom power systems using open-source LLMs.<br />
+              <strong>RAG Engineer @ Ericsson</strong> (2025) — Built an enterprise document-aware chatbot with on-premise LLM, PDF parsing & vector DB.<br />
+              <strong>Game UX Analyst Intern @ Ruse University</strong> (2022) — Analyzed gaming preferences using Hadoop, Spark & ML.
             </p>
           </div>
           <div className="card">
             <h3>💻 Technical Skills</h3>
             <p>
-              Proficient in Python, R, Kotlin, HTML, CSS, and TypeScript. Experienced in machine learning,
-              data analysis, combinatorial optimization, image analysis, and full-stack software development.
+              <strong>AI & ML:</strong> Keras, OpenCV, Scikit-learn, CNN, NLP, Image Recognition<br />
+              <strong>Big Data & Cloud:</strong> Hadoop, Spark, PySpark, Docker, K8s, CI/CD<br />
+              <strong>Web & Mobile:</strong> Vue.js, Kotlin, Android, HTML/CSS, Figma<br />
+              <strong>Languages:</strong> Python, Java, R, MATLAB, C, Linux<br />
+              <strong>Optimization:</strong> PSO, GA, Constraint Programming, A* Algorithm
             </p>
           </div>
           <div className="card">
-            <h3>🎨 Hobbies</h3>
+            <h3>🌍 Languages & Interests</h3>
             <p>
-              Passionate about writing, animation, and video editing — making complex concepts engaging
-              and accessible through creative storytelling.
+              English · Swedish · Mandarin · Japanese<br />
+              🎿 Skiing · 🎻 Violin · 🥊 Boxing<br />
+              Passionate about writing, animation & video editing — making complex concepts engaging and accessible.
             </p>
-          </div>
-          <div className="card">
-            <h3>🌍 Languages</h3>
-            <p>Fluent in English and Mandarin, enabling effective communication across diverse cultural contexts.</p>
           </div>
         </div>
       </section>
