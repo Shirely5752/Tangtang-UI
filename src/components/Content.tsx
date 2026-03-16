@@ -76,6 +76,18 @@ const Content = () => {
       {/* Projects */}
       <section id="projects" className="section">
         <h2 className="section__title">🚀 Projects</h2>
+        <div className="video-wrapper" style={{ marginBottom: '2rem' }}>
+          <iframe
+            src="https://drive.google.com/file/d/1k0ayrUw8PRNbr_oqK9dcZmChQPb5HM_P/preview"
+            width="800"
+            height="450"
+            allow="autoplay"
+            title="Bachelor Thesis - Kristianstad University"
+          />
+          <p style={{ textAlign: 'center', marginTop: '1rem', color: '#6c5ce7', fontWeight: 600 }}>
+            🎓 Bachelor Thesis Project — Kristianstad University
+          </p>
+        </div>
         <div className="about-grid">
           <div className="card card--project">
             <h3>🎞️ Project Animation Showcase</h3>
