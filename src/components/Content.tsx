@@ -101,7 +101,7 @@ const Content = () => {
           <a href="tel:+46729623388" className="card card--contact">
             <span>📞</span> +46 729 623 388
           </a>
-          <a href="https://www.linkedin.com/in/tingting-lyu-a8a26a230/" target="_blank" rel="noreferrer" className="card card--contact">
+          <a href="https://www.linkedin.com/in/tingtinglyu-2b61932ab/" target="_blank" rel="noreferrer" className="card card--contact">
             <span>💼</span> LinkedIn
           </a>
           <a href="https://github.com/Shirely5752" target="_blank" rel="noreferrer" className="card card--contact">
