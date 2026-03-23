@@ -264,6 +264,30 @@ button.btn--outline:hover { background: #fff; color: #6c5ce7; }
 .finding__icon { font-size: 1.5rem; flex-shrink: 0; }
 .finding p { font-size: 0.9rem; color: #4a5568; margin: 0; }
 
+/* ===== Story Timeline ===== */
+.story-timeline { position: relative; padding-left: 3rem; max-width: 800px; margin: 0 auto; }
+.story-timeline::before {
+  content: ''; position: absolute; left: 1.1rem; top: 0; bottom: 0;
+  width: 3px; background: linear-gradient(to bottom, #e74c3c, #e67e22, #6c5ce7, #00b894, #fdcb6e, #0984e3);
+  border-radius: 3px;
+}
+.story-chapter { position: relative; margin-bottom: 2.5rem; }
+.story-chapter:last-child { margin-bottom: 0; }
+.story-chapter__marker {
+  position: absolute; left: -2.55rem; top: 0.2rem;
+  width: 40px; height: 40px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.2rem; box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+}
+.story-chapter__card {
+  background: #fff; border-radius: 16px; padding: 1.8rem 2rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+  transition: transform 0.3s;
+}
+.story-chapter__card:hover { transform: translateY(-3px); }
+.story-chapter__card h3 { font-size: 1.2rem; margin-bottom: 0.6rem; }
+.story-chapter__card p { color: #4a5568; font-size: 0.95rem; line-height: 1.8; }
+
 /* ===== Footer ===== */
 .footer {
   text-align: center; padding: 2rem; color: #a0aec0;

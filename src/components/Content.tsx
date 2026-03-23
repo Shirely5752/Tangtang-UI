@@ -75,7 +75,7 @@ const Content = () => {
       </section>
 
       {/* Teamwork */}
-      <section id="teamwork" className="section section--alt">
+      <section id="teamwork" className="section">
         <h2 className="section__title">🤝 My Teamwork Viewpoint</h2>
         <div className="video-wrapper">
           <iframe
@@ -98,8 +98,14 @@ const Content = () => {
           <a href="mailto:allfdcm6@gmail.com" className="card card--contact">
             <span>📧</span> allfdcm6@gmail.com
           </a>
+          <a href="tel:+46729623388" className="card card--contact">
+            <span>📞</span> +46 729 623 388
+          </a>
+          <a href="https://www.linkedin.com/in/tingting-lyu-a8a26a230/" target="_blank" rel="noreferrer" className="card card--contact">
+            <span>💼</span> LinkedIn
+          </a>
           <a href="https://github.com/Shirely5752" target="_blank" rel="noreferrer" className="card card--contact">
-            <span>🐙</span> GitHub: tangtang
+            <span>🐙</span> GitHub
           </a>
           <a href="https://discord.com/channels/@me" target="_blank" rel="noreferrer" className="card card--contact">
             <span>💬</span> Discord
