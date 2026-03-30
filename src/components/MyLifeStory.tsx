@@ -7,30 +7,35 @@ const chapters = [
     title: 'The Fire',
     color: '#e74c3c',
     text: 'During my exchange in Bulgaria, a fire broke out in my hotel room in the middle of the night. Thick smoke filled the corridors. I was trapped — unable to see, barely able to breathe. It was the most terrifying moment of my life.',
+    video: 'https://drive.google.com/file/d/1DSRD2k5z2g7WLBvkpoPjryY8UBzgc3j0/preview',
   },
   {
     icon: '🚒',
     title: 'Rescue & Survival',
     color: '#e67e22',
     text: "Firefighters found me and carried me to safety. I couldn't stop shaking. In the ambulance, I kept questioning whether I had truly made it out. One person died, another fell into a deep coma. I couldn't stop imagining — what if I hadn't been found?",
+    video: 'https://drive.google.com/file/d/1PeC76Ajwt4tg07aVrBO4QbdGpUxHSMJK/preview',
   },
   {
     icon: '🤝',
     title: 'Kindness of Strangers',
     color: '#6c5ce7',
     text: "The Chinese Embassy, international education office, local Chinese community — everyone came together. We had lost everything: clothes, shoes, passports, gifts we'd prepared for friends. Yet from that zero point, strangers gave us everything we needed to rebuild. Their selfless support carried us through the darkest days.",
+    video: 'https://drive.google.com/file/d/1h6YBGilb6ufaobv37tGYcFLgBzxJV4xM/preview',
   },
   {
     icon: '🏥',
     title: 'Recovery',
     color: '#00b894',
     text: 'Burns on my right wrist and fingers. But the psychological wounds ran deeper. For weeks I was trapped in loops of "what if" — unable to sleep, unable to focus, replaying the smoke and the sirens. I thought I would need professional help to escape those thoughts.',
+    video: 'https://drive.google.com/file/d/1xJcaeesO9l4oiXHnjtsWEEeEeYRKWr6S/preview',
   },
   {
     icon: '🌅',
     title: 'Finding Peace',
     color: '#fdcb6e',
     text: "But humans are stronger than they think. The moment I landed in Hong Kong on my way home, an unexpected calm washed over me. The harbor, the city lights, the normalcy of life — it all reminded me that the world keeps turning. Sometimes healing doesn't come from therapy. It comes from simply moving forward.",
+    video: 'https://drive.google.com/file/d/1CdyCfybP5oPAmZ-0GaPWg-r1hB-lpdbY/preview',
   },
   {
     icon: '🚀',
@@ -58,7 +63,6 @@ const MyLifeStory = () => {
         </div>
       </section>
 
-      {/* Story Chapters */}
       <section className="section">
         <h2 className="section__title">🔥 The Bulgaria Fire Incident</h2>
         <p style={{ textAlign: 'center', color: '#4a5568', maxWidth: 700, margin: '0 auto 3rem', fontSize: '1.05rem' }}>
@@ -73,6 +77,11 @@ const MyLifeStory = () => {
               </div>
               <div className="story-chapter__card">
                 <h3 style={{ color: ch.color }}>{ch.title}</h3>
+                {ch.video && (
+                  <div className="video-wrapper" style={{ margin: '1rem 0' }}>
+                    <iframe src={ch.video} width="100%" height="300" allow="autoplay" title={ch.title} />
+                  </div>
+                )}
                 <p>{ch.text}</p>
               </div>
             </div>
@@ -80,7 +89,6 @@ const MyLifeStory = () => {
         </div>
       </section>
 
-      {/* Lessons */}
       <section className="section section--alt">
         <h2 className="section__title">💡 What I Learned</h2>
         <div className="about-grid" style={{ maxWidth: 800, margin: '0 auto' }}>
@@ -93,7 +101,6 @@ const MyLifeStory = () => {
         </div>
       </section>
 
-      {/* Gratitude */}
       <section className="section">
         <div className="card" style={{ maxWidth: 750, margin: '0 auto', textAlign: 'center', padding: '2.5rem' }}>
           <h3 style={{ fontSize: '1.4rem', marginBottom: '1rem' }}>🙏 A Message of Gratitude</h3>
