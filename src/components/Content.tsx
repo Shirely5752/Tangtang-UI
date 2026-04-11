@@ -2,8 +2,20 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Content = () => {
-  const [musicOn, setMusicOn] = React.useState(false);
+  const [musicOn, setMusicOn] = React.useState(true);
   const audioRef = React.useRef<HTMLAudioElement>(null);
+
+  React.useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    const tryPlay = () => {
+      audio.play().catch(() => {});
+    };
+    tryPlay();
+    const handler = () => { tryPlay(); document.removeEventListener('click', handler); };
+    document.addEventListener('click', handler);
+    return () => document.removeEventListener('click', handler);
+  }, []);
 
   const toggleMusic = () => {
     if (audioRef.current) {
@@ -18,7 +30,7 @@ const Content = () => {
 
   return (
     <main>
-      <audio ref={audioRef} loop src="https://drive.google.com/uc?export=download&id=195Qj4q1BFXy6YY1CsOksQ6hYceTCej4C" />
+      <audio ref={audioRef} loop src={process.env.PUBLIC_URL + '/bgm.mp3'} />
       <button className="music-toggle" onClick={toggleMusic} aria-label="Toggle music">
         {musicOn ? '🔊' : '🔇'}
       </button>
