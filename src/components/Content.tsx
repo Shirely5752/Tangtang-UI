@@ -112,7 +112,7 @@ const Content = () => {
       {/* About */}
       <section id="about" className="section">
         <h2 className="section__title">✨ About Me</h2>
-        <div className="about-grid">
+        <div className="about-grid about-grid--2col">
           <div className="card">
             <h3>🎓 Education</h3>
             <p>
@@ -131,25 +131,35 @@ const Content = () => {
               <strong>Game UX Analyst Intern @ Ruse University</strong> (2022) — Analyzed gaming preferences using Hadoop, Spark & ML.
             </p>
           </div>
-          <div className="card">
-            <h3>💻 Technical Skills</h3>
-            <p>
-              <strong>AI & ML:</strong> AI Agents (Amazon Q), Keras, OpenCV, Scikit-learn, CNN, NLP, Image Recognition, DL, HMM, Naive Bayes<br />
-              <strong>Big Data & Cloud:</strong> Hadoop, Spark, PySpark, SSH, Linux, Git, Swedish Science Cloud, Docker, K8s, CI/CD<br />
-              <strong>Data Analysis:</strong> Pandas, Seaborn, Matplotlib, ECharts<br />
-              <strong>Optimization:</strong> PSO, GA, Combinatorial Optimization, Constraint Programming, A* Algorithm<br />
-              <strong>Web & Mobile:</strong> Vue.js, Kotlin, Android, HTML/CSS, Figma, UI/UX Design<br />
-              <strong>Testing:</strong> PyTest, Unit Testing, System Testing<br />
-              <strong>Languages:</strong> Python, Java, R, MATLAB, C, Linux<br />
-              <strong>Presentation:</strong> Animation creation, technical writing, story articles & essays
-            </p>
+        </div>
+        <div className="card card--wide">
+          <h3>💻 Technical Skills</h3>
+          <div className="skills-grid">
+            <div><strong>AI & ML</strong><br />AI Agents (Amazon Q), Keras, OpenCV, Scikit-learn, CNN, NLP, Image Recognition, DL, HMM, Naive Bayes</div>
+            <div><strong>Big Data & Cloud</strong><br />Hadoop, Spark, PySpark, SSH, Linux, Git, Swedish Science Cloud, Docker, K8s, CI/CD</div>
+            <div><strong>Data Analysis</strong><br />Pandas, Seaborn, Matplotlib, ECharts</div>
+            <div><strong>Optimization</strong><br />PSO, GA, Combinatorial Optimization, Constraint Programming, A* Algorithm</div>
+            <div><strong>Web & Mobile</strong><br />Vue.js, Kotlin, Android, HTML/CSS, Figma, UI/UX Design</div>
+            <div><strong>Testing</strong><br />PyTest, Unit Testing, System Testing</div>
+            <div><strong>Programming</strong><br />Python, Java, R, MATLAB, C, Linux</div>
+            <div><strong>Presentation</strong><br />Animation creation, technical writing, story articles & essays</div>
           </div>
+        </div>
+        <div className="about-grid about-grid--2col">
           <div className="card">
             <h3>🌍 Languages & Interests</h3>
             <p>
               English · Swedish · Mandarin · Japanese<br />
               🎿 Skiing · 🎻 Violin · 🥊 Boxing<br />
               Passionate about writing, animation & video editing — making complex concepts engaging and accessible.
+            </p>
+          </div>
+          <div className="card">
+            <h3>🏆 Awards & Scholarships</h3>
+            <p>
+              <strong>Erasmus Scholarship 1st Prize</strong> — EU, Bulgaria (2022)<br />
+              <strong>University Scholarship</strong> — Kristianstad University (2023)<br />
+              <strong>University Scholarship</strong> — Shanghai Polytechnic University (2023)
             </p>
           </div>
         </div>

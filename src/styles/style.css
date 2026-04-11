@@ -116,15 +116,28 @@ button.btn--outline:hover { background: #fff; color: #6c5ce7; }
   display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 1.5rem;
 }
+.about-grid--2col {
+  grid-template-columns: repeat(2, 1fr);
+}
 
 .card {
   background: #fff; border-radius: 16px; padding: 2rem;
   box-shadow: 0 4px 15px rgba(0,0,0,0.06);
   transition: transform 0.3s, box-shadow 0.3s;
 }
+.card--wide {
+  margin: 1.5rem 0;
+}
 .card:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(0,0,0,0.1); }
 .card h3 { font-size: 1.2rem; margin-bottom: 0.8rem; color: #6c5ce7; }
 .card p { color: #4a5568; font-size: 0.95rem; }
+
+.skills-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 1rem; color: #4a5568; font-size: 0.9rem;
+}
+.skills-grid div { padding: 0.8rem; background: #f7f8fc; border-radius: 10px; }
+.skills-grid strong { color: #6c5ce7; display: block; margin-bottom: 0.3rem; }
 
 .card--project { border-top: 4px solid #6c5ce7; }
 .card__link {
@@ -373,10 +386,6 @@ button.btn--outline:hover { background: #fff; color: #6c5ce7; }
   .navbar__links--open { display: flex; }
   .hero__text h1 { font-size: 2rem; }
   .hero__text p { font-size: 1rem; }
-  .hero__split {
-    flex-direction: column; text-align: center;
-  }
-  .hero__split .hero__text { text-align: center; }
-  .hero__split .hero__buttons { justify-content: center; }
-  .hero__video { width: 260px; height: 400px; }
+  .about-grid--2col { grid-template-columns: 1fr; }
+  .skills-grid { grid-template-columns: repeat(2, 1fr); }
 }
