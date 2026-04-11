@@ -21,6 +21,7 @@ const lyrics = [
 const Content = () => {
   const [musicOn, setMusicOn] = React.useState(true);
   const [currentLine, setCurrentLine] = React.useState(0);
+  const [sparkle, setSparkle] = React.useState(false);
   const audioRef = React.useRef<HTMLAudioElement>(null);
   const lyricsRef = React.useRef<HTMLDivElement>(null);
 
@@ -72,6 +73,9 @@ const Content = () => {
       <section className="hero">
         <div className="hero__text">
           <h1>Hi, I'm <span className="highlight">Tingting Lyu</span> 👋</h1>
+          <p className="hero__magic" onClick={() => { setSparkle(true); setTimeout(() => setSparkle(false), 1000); }}>
+            Welcome to where the magic happens! {sparkle && <span className="sparkles">✨🌟⭐💫✨</span>}
+          </p>
           <p>Software Engineer · AI & ML Enthusiast · Data Scientist · Creative Storyteller</p>
           <p className="hero__sub">Stockholm, Sweden 🇸🇪 | Ericsson Intern | MSc Computer Science @ Uppsala University</p>
           <div className="hero__buttons">
