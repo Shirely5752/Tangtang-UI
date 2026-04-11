@@ -2,8 +2,26 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Content = () => {
+  const [musicOn, setMusicOn] = React.useState(false);
+  const audioRef = React.useRef<HTMLAudioElement>(null);
+
+  const toggleMusic = () => {
+    if (audioRef.current) {
+      if (musicOn) {
+        audioRef.current.pause();
+      } else {
+        audioRef.current.play();
+      }
+      setMusicOn(!musicOn);
+    }
+  };
+
   return (
     <main>
+      <audio ref={audioRef} loop src="https://drive.google.com/uc?export=download&id=195Qj4q1BFXy6YY1CsOksQ6hYceTCej4C" />
+      <button className="music-toggle" onClick={toggleMusic} aria-label="Toggle music">
+        {musicOn ? '🔊' : '🔇'}
+      </button>
       {/* Hero */}
       <section className="hero">
         <div className="hero__text">

@@ -305,6 +305,17 @@ button.btn--outline:hover { background: #fff; color: #6c5ce7; }
 .story-chapter__card h3 { font-size: 1.2rem; margin-bottom: 0.6rem; }
 .story-chapter__card p { color: #4a5568; font-size: 0.95rem; line-height: 1.8; }
 
+/* ===== Music Toggle ===== */
+.music-toggle {
+  position: fixed; bottom: 2rem; right: 2rem; z-index: 200;
+  width: 50px; height: 50px; border-radius: 50%; border: none;
+  background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+  color: #fff; font-size: 1.4rem; cursor: pointer;
+  box-shadow: 0 4px 15px rgba(108,92,231,0.4);
+  transition: transform 0.3s;
+}
+.music-toggle:hover { transform: scale(1.1); }
+
 /* ===== Footer ===== */
 .footer {
   text-align: center; padding: 2rem; color: #a0aec0;
