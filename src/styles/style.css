@@ -305,6 +305,45 @@ button.btn--outline:hover { background: #fff; color: #6c5ce7; }
 .story-chapter__card h3 { font-size: 1.2rem; margin-bottom: 0.6rem; }
 .story-chapter__card p { color: #4a5568; font-size: 0.95rem; line-height: 1.8; }
 
+/* ===== Lyrics IDE ===== */
+.lyrics-section {
+  padding: 3rem 1.5rem; background: #1e1e2e;
+}
+.lyrics-ide {
+  max-width: 700px; margin: 0 auto; border-radius: 12px; overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.4); font-family: 'Consolas', 'Courier New', monospace;
+}
+.lyrics-ide__titlebar {
+  background: #2d2d3f; padding: 0.7rem 1rem;
+  display: flex; align-items: center; gap: 0.8rem;
+}
+.lyrics-ide__dots { display: flex; gap: 6px; }
+.lyrics-ide__dots span { width: 12px; height: 12px; border-radius: 50%; }
+.lyrics-ide__filename { color: #888; font-size: 0.85rem; }
+.lyrics-ide__body { padding: 1.2rem 0; max-height: 400px; overflow-y: auto; }
+
+.lyrics-line {
+  display: flex; padding: 0.25rem 1.2rem; transition: all 0.3s;
+  border-left: 3px solid transparent;
+}
+.lyrics-line--active {
+  background: rgba(108,92,231,0.15); border-left-color: #6c5ce7;
+}
+.lyrics-line--past { opacity: 0.4; }
+.lyrics-line__num {
+  width: 30px; text-align: right; margin-right: 1.2rem;
+  color: #555; font-size: 0.85rem; flex-shrink: 0; user-select: none;
+}
+.lyrics-line__text { color: #ccc; font-size: 0.95rem; }
+.lyrics-kw { color: #c678dd; }
+.lyrics-fn { color: #61afef; }
+.lyrics-str { color: #98c379; }
+.lyrics-comment { color: #5c6370; }
+.lyrics-cursor {
+  color: #6c5ce7; animation: blink 0.8s infinite;
+}
+@keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: 0; } }
+
 /* ===== Music Toggle ===== */
 .music-toggle {
   position: fixed; bottom: 2rem; right: 2rem; z-index: 200;

@@ -1,9 +1,28 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+const lyrics = [
+  { time: 0, text: "I'd like to work at your startup." },
+  { time: 4, text: "Hello, Hiring Manager." },
+  { time: 7, text: "If I was your employee, I'd never take a break." },
+  { time: 11, text: "No matter the hours, work me like a slave." },
+  { time: 15, text: "I'm severely underpaid, I still won't complain." },
+  { time: 19, text: "If I was your employee, I'd never take a break." },
+  { time: 23, text: "Tell me what you like, what you really looking for." },
+  { time: 27, text: "I could manages all the finances, review all the code." },
+  { time: 31, text: "I could do some AI shit you don't even know." },
+  { time: 35, text: "You're tryna pitch to YC, I'll get you through the door." },
+  { time: 39, text: "Employee, employee, I could be ur employee." },
+  { time: 43, text: "I could be your employee summer, fall, and winter." },
+  { time: 47, text: "After my paycheck, I'll treat y'all out to dinner." },
+  { time: 51, text: "Hope to hear back, let me know if you're interested." },
+];
+
 const Content = () => {
   const [musicOn, setMusicOn] = React.useState(true);
+  const [currentLine, setCurrentLine] = React.useState(0);
   const audioRef = React.useRef<HTMLAudioElement>(null);
+  const lyricsRef = React.useRef<HTMLDivElement>(null);
 
   React.useEffect(() => {
     const audio = audioRef.current;
@@ -14,7 +33,22 @@ const Content = () => {
     tryPlay();
     const handler = () => { tryPlay(); document.removeEventListener('click', handler); };
     document.addEventListener('click', handler);
-    return () => document.removeEventListener('click', handler);
+
+    const syncLyrics = () => {
+      const t = audio.currentTime;
+      let idx = 0;
+      for (let i = lyrics.length - 1; i >= 0; i--) {
+        if (t >= lyrics[i].time) { idx = i; break; }
+      }
+      setCurrentLine(idx);
+      requestAnimationFrame(syncLyrics);
+    };
+    const raf = requestAnimationFrame(syncLyrics);
+
+    return () => {
+      document.removeEventListener('click', handler);
+      cancelAnimationFrame(raf);
+    };
   }, []);
 
   const toggleMusic = () => {
@@ -43,6 +77,34 @@ const Content = () => {
           <div className="hero__buttons">
             <Link to="/projects" className="btn btn--primary">View Projects</Link>
             <button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} className="btn btn--outline">Contact Me</button>
+          </div>
+        </div>
+      </section>
+
+      {/* Lyrics */}
+      <section className="lyrics-section">
+        <div className="lyrics-ide">
+          <div className="lyrics-ide__titlebar">
+            <div className="lyrics-ide__dots">
+              <span style={{ background: '#ff5f56' }} />
+              <span style={{ background: '#ffbd2e' }} />
+              <span style={{ background: '#27c93f' }} />
+            </div>
+            <span className="lyrics-ide__filename">hire_me.py</span>
+          </div>
+          <div className="lyrics-ide__body" ref={lyricsRef}>
+            {lyrics.map((l, i) => (
+              <div key={i} className={`lyrics-line ${i === currentLine ? 'lyrics-line--active' : i < currentLine ? 'lyrics-line--past' : ''}`}>
+                <span className="lyrics-line__num">{i + 1}</span>
+                <span className="lyrics-line__text">
+                  {i === 0 ? <span className="lyrics-kw">def </span> : null}
+                  {i === 0 ? <span className="lyrics-fn">hire_me</span> : null}
+                  {i === 0 ? '(): ' : null}
+                  {i === 0 ? <span className="lyrics-comment"># 🎵</span> : null}
+                  {i !== 0 && <><span className="lyrics-str">"{l.text}"</span>{i === currentLine && <span className="lyrics-cursor">|</span>}</>}
+                </span>
+              </div>
+            ))}
           </div>
         </div>
       </section>
