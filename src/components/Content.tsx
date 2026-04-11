@@ -6,13 +6,22 @@ const Content = () => {
     <main>
       {/* Hero */}
       <section className="hero">
-        <div className="hero__text">
-          <h1>Hi, I'm <span className="highlight">Tingting Lyu</span> 👋</h1>
-          <p>Software Developer · AI & ML Enthusiast · Data Analyst · Creative Storyteller</p>
-          <p className="hero__sub">Stockholm, Sweden 🇸🇪 | Ericsson Thesis Student | MSc Computer Science @ Uppsala University</p>
-          <div className="hero__buttons">
-            <Link to="/projects" className="btn btn--primary">View Projects</Link>
-            <button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} className="btn btn--outline">Contact Me</button>
+        <div className="hero__split">
+          <div className="hero__text">
+            <h1>Hi, I'm <span className="highlight">Tingting Lyu</span> 👋</h1>
+            <p>Software Developer · AI & ML Enthusiast · Data Analyst · Creative Storyteller</p>
+            <p className="hero__sub">Stockholm, Sweden 🇸🇪 | Ericsson Thesis Student | MSc Computer Science @ Uppsala University</p>
+            <div className="hero__buttons">
+              <Link to="/projects" className="btn btn--primary">View Projects</Link>
+              <button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} className="btn btn--outline">Contact Me</button>
+            </div>
+          </div>
+          <div className="hero__video">
+            <iframe
+              src="https://www.instagram.com/reel/DQBTMjBjUbz/embed"
+              title="Instagram Reel"
+              allowFullScreen
+            />
           </div>
         </div>
       </section>
