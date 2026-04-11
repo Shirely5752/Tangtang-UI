@@ -134,11 +134,14 @@ const Content = () => {
           <div className="card">
             <h3>💻 Technical Skills</h3>
             <p>
-              <strong>AI & ML:</strong> Keras, OpenCV, Scikit-learn, CNN, NLP, Image Recognition<br />
-              <strong>Big Data & Cloud:</strong> Hadoop, Spark, PySpark, Docker, K8s, CI/CD<br />
-              <strong>Web & Mobile:</strong> Vue.js, Kotlin, Android, HTML/CSS, Figma<br />
+              <strong>AI & ML:</strong> AI Agents (Amazon Q), Keras, OpenCV, Scikit-learn, CNN, NLP, Image Recognition, DL, HMM, Naive Bayes<br />
+              <strong>Big Data & Cloud:</strong> Hadoop, Spark, PySpark, SSH, Linux, Git, Swedish Science Cloud, Docker, K8s, CI/CD<br />
+              <strong>Data Analysis:</strong> Pandas, Seaborn, Matplotlib, ECharts<br />
+              <strong>Optimization:</strong> PSO, GA, Combinatorial Optimization, Constraint Programming, A* Algorithm<br />
+              <strong>Web & Mobile:</strong> Vue.js, Kotlin, Android, HTML/CSS, Figma, UI/UX Design<br />
+              <strong>Testing:</strong> PyTest, Unit Testing, System Testing<br />
               <strong>Languages:</strong> Python, Java, R, MATLAB, C, Linux<br />
-              <strong>Optimization:</strong> PSO, GA, Constraint Programming, A* Algorithm
+              <strong>Presentation:</strong> Animation creation, technical writing, story articles & essays
             </p>
           </div>
           <div className="card">
